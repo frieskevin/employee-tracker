@@ -88,6 +88,7 @@ const updateEmp = () => {
     ])
     .then(answers => {
         let employee
+        console.log(answers.name)
         switch(answers.name) {
             case 'Greg Lord':
                 employee = 'Greg';
@@ -108,8 +109,11 @@ const updateEmp = () => {
                 employee = 'Colonel';
                 break;
         }
-        db.query(`UPDATE employee SET role_id = ${answers.new_role} WHERE first_name = ${employee}`, (err, rows) => {});
-    console.log('Employee Updated.');
+        console.log(employee);
+        db.query(`UPDATE employee 
+                SET role_id = '${answers.new_role}' 
+                WHERE first_name = '${employee}';`, (err, rows) => {});
+        console.log('Employee Updated.');
     });
 }
 

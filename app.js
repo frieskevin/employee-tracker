@@ -27,7 +27,9 @@ const promptUser = () => {
                 });
                 break;
             case 'View all employees':
-                db.query(``, (err, rows) => {
+                db.query(`Select employee.*, role.title AS title, role.salary AS salary, role.department_id AS department_id
+                        FROM employee
+                        LEFT JOIN role ON employee.role_id = role.id;`, (err, rows) => {
                     console.table(rows);
                 });
                 break;
