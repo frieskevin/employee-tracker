@@ -3,6 +3,8 @@ const db = require('./db/connection')
 const cTable = require('console.table');
 const {addDep, addRole, addEmp, updateEmp} = require('./db/functions')
 
+
+//Main inquirer function which includes the rest of the functions imported from functions file
 const promptUser = () => {
     return inquirer.prompt([
         {
@@ -49,4 +51,5 @@ const promptUser = () => {
     });
 };
 
+// Starts the app
 promptUser();

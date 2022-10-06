@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const cTable = require('console.table');
 const db = require('./connection');
 
+// Function that adds new departments to the department table
 const addDep = () => {
     return inquirer.prompt([
         {
@@ -17,6 +18,7 @@ const addDep = () => {
     });
 };
 
+// Function that adds new role to role table
 const addRole = () => {
     return inquirer.prompt([
         {
@@ -42,6 +44,7 @@ const addRole = () => {
     });
 };
 
+//Function adds new employee to employee table
 const addEmp = () => {
     return inquirer.prompt([
         {
@@ -72,6 +75,7 @@ const addEmp = () => {
     });
 };
 
+// Function updates an existing employee's role id
 const updateEmp = () => {
     return inquirer.prompt([
         {
